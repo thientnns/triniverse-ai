@@ -1,6 +1,12 @@
 import streamlit as st
-import cv2
+from PIL import Image
 import numpy as np
+# Đưa cv2 và mediapipe vào trong một khối thử nghiệm để tránh crash lúc load
+try:
+    import cv2
+    import mediapipe as mp
+except ImportError:
+    st.error("Hệ thống đang khởi tạo thư viện đồ họa, vui lòng đợi 10 giây và nhấn F5.")
 import mediapipe as mp
 from PIL import Image
 
