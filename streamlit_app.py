@@ -1,8 +1,13 @@
 import streamlit as st
+import os
+
+# Ép hệ thống nhận diện thư viện đồ họa ngầm
+os.environ["OPENCV_VIDEOIO_PRIORITY_MSMF"] = "0"
+
 from PIL import Image
 import numpy as np
-# Đưa cv2 và mediapipe vào trong một khối thử nghiệm để tránh crash lúc load
-try:
+import cv2
+import mediapipe as mp
     import cv2
     import mediapipe as mp
 except ImportError:
